@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# No crawlable content lives in these
+Disallow: /vendor/
+
+Sitemap: https://dhaswin86.github.io/growza-website/sitemap.xml
