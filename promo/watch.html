@@ -1,0 +1,71 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Growza promo — all cuts</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="../fonts.css"><link rel="stylesheet" href="../styles.css">
+<style>
+.cuts{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-top:2rem}
+.cut{border:1px solid var(--line);border-radius:var(--r-md);background:#fff;overflow:hidden;display:flex;flex-direction:column}
+.cut iframe{width:100%;border:0;display:block;background:#0b1a0d}
+.cut .body{padding:1.1rem 1.2rem 1.3rem}
+.cut h3{font-size:1.05rem;margin:0 0 .3rem}
+.cut p{font-size:.84rem;color:var(--muted);line-height:1.5;margin:0 0 1rem}
+.cut .btn{align-self:flex-start}
+.gif{width:100%;display:block}
+@media(max-width:900px){.cuts{grid-template-columns:1fr}}
+</style></head><body>
+<header class="nav"><div class="wrap">
+  <a class="logo" href="../index.html"><img src="../assets/logo-green.png" alt="Growza"></a>
+  <div class="nav-actions"><a class="btn btn-dark" href="../index.html">Back to site</a></div>
+</div></header>
+<main>
+<section class="article-hero"><div class="wrap">
+  <p class="kicker">Promotional film</p>
+  <h1>Three cuts, ready to record.</h1>
+  <p>Built as web animation rather than video, so the text stays sharp at any size.
+     Open a cut full screen and screen-record it to get an MP4.</p>
+</div></section>
+
+<section class="section"><div class="wrap">
+  <div class="cuts">
+    <article class="cut">
+      <iframe src="index.html" height="330" title="Landscape cut" loading="lazy"></iframe>
+      <div class="body"><h3>Landscape · 16:9 · ~40s</h3>
+      <p>The full film. Website hero, YouTube, or a project submission.
+         Record at 1280&times;720 or larger.</p>
+      <a class="btn btn-lime" href="index.html" target="_blank">Play full screen →</a></div>
+    </article>
+    <article class="cut">
+      <iframe src="vertical.html" height="330" title="Vertical cut" loading="lazy"></iframe>
+      <div class="body"><h3>Vertical · 9:16 · ~33s</h3>
+      <p>Same beats, condensed for Reels, Shorts and WhatsApp status.
+         Record at 1080&times;1920.</p>
+      <a class="btn btn-lime" href="vertical.html" target="_blank">Play full screen →</a></div>
+    </article>
+    <article class="cut">
+      <img class="gif" src="../assets/growza-promo.gif" alt="Growza promo animation">
+      <div class="body"><h3>Looping GIF · 10s · 1.2 MB</h3>
+      <p>A real file, no recording needed. Drops straight into WhatsApp,
+         LinkedIn or a slide.</p>
+      <a class="btn" href="../assets/growza-promo.gif" download>Download the GIF →</a></div>
+    </article>
+    <article class="cut">
+      <div class="body" style="padding-top:1.3rem">
+        <h3>How to record an MP4</h3>
+        <p>There is no <code>ffmpeg</code> on this machine, so the two animated cuts
+           are pages rather than video files. To get an MP4:</p>
+        <ol style="font-size:.86rem;line-height:1.7;color:var(--muted);padding-left:1.1rem">
+          <li>Open a cut full screen and let it load</li>
+          <li>Press <strong>⇧⌘5</strong>, choose <em>Record Selected Portion</em></li>
+          <li>Drag around the stage, hit Record, then click <strong>↻ Replay</strong></li>
+          <li>Stop when the logo fades — macOS saves a .mov you can share or convert</li>
+        </ol>
+      </div>
+    </article>
+  </div>
+</div></section>
+</main>
+<footer class="footer"><div class="wrap"><div class="legal">
+  <span>© 2026 Growza</span><span>Promotional assets</span>
+</div></div></footer>
+</body></html>
