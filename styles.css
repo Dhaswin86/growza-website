@@ -280,3 +280,7 @@
 .btn{white-space:nowrap}
 .cta-box .btn{flex:none}
 .story-sign{margin-top:2rem;padding-top:1.2rem;border-top:1px solid var(--line);font-weight:700;color:var(--ink)}
+
+/* the "for marketers" lockup costs ~92px; on a phone that is the difference
+   between the header fitting and the CTA being clipped */
+@media(max-width:560px){.logo-sub{display:none}}
