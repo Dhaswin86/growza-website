@@ -5,38 +5,44 @@
 <link rel="stylesheet" href="../fonts.css">
 <link rel="stylesheet" href="promo.css">
 <style>
-.stage{width:1080px;height:1920px;transform-origin:center}
-.scene{padding:0 88px}
-h1{font-size:112px;line-height:1.05;letter-spacing:-.04em;font-weight:700}
-h2{font-size:74px;line-height:1.1;letter-spacing:-.035em;font-weight:700}
-.kicker{font-size:26px;letter-spacing:.18em;margin-bottom:34px}
-.sub{font-size:38px;line-height:1.45;color:#c4cdc7;margin-top:34px}
-.win{width:100%}
-.winbody{padding:26px 28px 14px}
-.search span{font-size:30px;padding:18px 20px}
-.search b{font-size:30px;padding:18px 26px}
-.row{padding:20px 6px;gap:18px}
-.av{width:56px;height:56px;font-size:19px}
-.who b{font-size:26px}.who small{font-size:21px}
-.badge{font-size:16px;padding:6px 14px}
-.price{font-size:26px}
-.ticks{display:grid;gap:46px;margin-top:20px}
-.tick i{font-size:44px}
-.tick b{font-size:44px;display:block}
-.tick p{color:#b9c4bd;font-size:29px;margin-top:8px;line-height:1.4}
-.card{border:1px solid rgba(255,255,255,.22);border-radius:18px;padding:44px;margin-bottom:30px}
+.stage{--u:min(0.092593vw, 0.052083vh)}   /* 1/1080 vw, 1/1920 vh */
+.scene{padding:0 calc(88*var(--u))}
+h1{font-size:calc(112*var(--u));line-height:1.05;letter-spacing:-.04em;font-weight:700}
+h2{font-size:calc(74*var(--u));line-height:1.1;letter-spacing:-.035em;font-weight:700}
+.kicker{font-size:calc(26*var(--u));letter-spacing:.18em;margin-bottom:calc(34*var(--u))}
+.sub{font-size:calc(38*var(--u));line-height:1.45;color:#c4cdc7;margin-top:calc(34*var(--u))}
+.win{width:100%;border-radius:calc(14*var(--u))}
+.winbar{padding:calc(16*var(--u)) calc(20*var(--u));gap:calc(9*var(--u))}
+.winbar i{width:calc(13*var(--u));height:calc(13*var(--u))}
+.winbody{padding:calc(26*var(--u)) calc(28*var(--u)) calc(14*var(--u))}
+.search{border-radius:calc(8*var(--u))}
+.search span{font-size:calc(30*var(--u));padding:calc(18*var(--u)) calc(20*var(--u))}
+.search b{font-size:calc(30*var(--u));padding:calc(18*var(--u)) calc(26*var(--u))}
+.row{padding:calc(20*var(--u)) calc(6*var(--u));gap:calc(18*var(--u))}
+.av{width:calc(56*var(--u));height:calc(56*var(--u));font-size:calc(19*var(--u))}
+.who b{font-size:calc(26*var(--u))}
+.who small{font-size:calc(21*var(--u))}
+.badge{font-size:calc(16*var(--u));padding:calc(6*var(--u)) calc(14*var(--u))}
+.price{font-size:calc(26*var(--u))}
+.ticks{display:grid;gap:calc(46*var(--u));margin-top:calc(20*var(--u))}
+.tick{gap:calc(18*var(--u))}
+.tick i{font-size:calc(44*var(--u))}
+.tick b{font-size:calc(44*var(--u));display:block}
+.tick p{color:#b9c4bd;font-size:calc(29*var(--u));margin-top:calc(8*var(--u));line-height:1.4}
+.card{border:1px solid rgba(255,255,255,.22);border-radius:calc(18*var(--u));
+      padding:calc(44*var(--u));margin-bottom:calc(30*var(--u))}
 .card.alt{background:rgba(255,255,255,.07)}
-.card h3{font-size:50px;letter-spacing:-.025em;margin-bottom:16px;line-height:1.1}
-.card p{color:#c4cdc7;font-size:30px;line-height:1.45}
+.card h3{font-size:calc(50*var(--u));letter-spacing:-.025em;margin-bottom:calc(16*var(--u));line-height:1.1}
+.card p{color:#c4cdc7;font-size:calc(30*var(--u));line-height:1.45}
 .tag{display:inline-block;background:rgba(255,255,255,.14);color:var(--brand);
-     border-radius:99px;padding:8px 20px;font-size:20px;font-weight:800;
-     letter-spacing:.08em;text-transform:uppercase;margin-bottom:22px}
-.endlogo{width:560px;display:block;margin:0 auto 52px}
-.url{font-size:44px;font-weight:700;color:var(--brand);text-align:center}
-.endsub{text-align:center;font-size:34px;color:#c4cdc7;margin-top:24px}
+     border-radius:99px;padding:calc(8*var(--u)) calc(20*var(--u));font-size:calc(20*var(--u));
+     font-weight:800;letter-spacing:.08em;text-transform:uppercase;margin-bottom:calc(22*var(--u))}
+.endlogo{width:calc(560*var(--u));display:block;margin:0 auto calc(52*var(--u))}
+.url{font-size:calc(44*var(--u));font-weight:700;color:var(--brand);text-align:center}
+.endsub{text-align:center;font-size:calc(34*var(--u));color:#c4cdc7;margin-top:calc(24*var(--u))}
 </style></head><body>
 
-<div class="stage" id="stage">
+<div class="stage">
 
   <section class="scene" style="--dur:4.4s;animation-delay:0s">
     <p class="kicker line" style="animation-delay:.3s">A true story</p>
@@ -94,7 +100,7 @@ h2{font-size:74px;line-height:1.1;letter-spacing:-.035em;font-weight:700}
     </div>
   </section>
 
-  <section class="scene" style="--dur:5s;animation-delay:28s">
+  <section class="scene last" style="--dur:5s;animation-delay:28s">
     <img class="endlogo line" src="../assets/logo-footer.png" alt="Growza" style="animation-delay:28.3s">
     <p class="url line" style="animation-delay:28.8s">growzacorp.netlify.app</p>
     <p class="endsub line" style="animation-delay:29.2s">Connect. Create. Grow.</p>
@@ -103,12 +109,5 @@ h2{font-size:74px;line-height:1.1;letter-spacing:-.035em;font-weight:700}
 </div>
 
 <button class="replay" onclick="location.reload()">↻ Replay</button>
-<script>
-const stage=document.getElementById('stage');
-function fit(){const s=Math.min(innerWidth/1080,innerHeight/1920);stage.style.transform='scale('+s+')';}
-/* a bare resize listener misses viewport changes that do not fire resize
-   (device emulation, a pane being resized around us), so observe instead */
-new ResizeObserver(fit).observe(document.documentElement);
-addEventListener('resize',fit); addEventListener('load',fit); fit();
-</script>
+
 </body></html>

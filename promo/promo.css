@@ -8,10 +8,16 @@
 }
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:#0b1a0d;font-family:'Inter',ui-sans-serif,system-ui,sans-serif;
-     display:grid;place-items:center;min-height:100vh;overflow:hidden}
+     min-height:100vh;overflow:hidden}
 
-.stage{position:relative;overflow:hidden;background:var(--forest);color:#fff;
-       box-shadow:0 30px 90px rgba(0,0,0,.55)}
+/* No transform, no JS. The stage fills its viewport (a full window or an
+   iframe) and every size is expressed in --u, one unit of the design grid:
+   the smaller of "viewport width / design width" and "viewport height /
+   design height". That is exactly what a scale-to-fit does, but resolved by
+   the layout engine, so it can never drift out of alignment. */
+.stage{position:relative;width:100vw;height:100vh;overflow:hidden;
+       background:var(--forest);color:#fff}
+
 .stage::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:1;
   background-image:radial-gradient(circle,rgba(255,255,255,.16) 1px,transparent 1.2px);
   background-size:26px 26px;
@@ -67,3 +73,15 @@ body{background:#0b1a0d;font-family:'Inter',ui-sans-serif,system-ui,sans-serif;
         border:0;border-radius:6px;padding:10px 16px;font:inherit;font-weight:700;
         font-size:13px;cursor:pointer;opacity:.85}
 .replay:hover{opacity:1}
+
+/* The last scene must NOT fade out, or the film ends on an empty stage and
+   anyone arriving late sees nothing. It fades in and holds on the sign-off. */
+.scene.last{animation-name:sceneHold}
+@keyframes sceneHold{
+  0%  {opacity:0;transform:translateY(14px)}
+  12% {opacity:1;transform:none}
+  100%{opacity:1;transform:none}
+}
+/* a small hint that the film has finished and can be replayed */
+.ended .replay{animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:.85}50%{opacity:1;transform:translateY(-2px)}}
