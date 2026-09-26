@@ -284,3 +284,13 @@
 /* the "for marketers" lockup costs ~92px; on a phone that is the difference
    between the header fitting and the CTA being clipped */
 @media(max-width:560px){.logo-sub{display:none}}
+
+/* The nav wrap is space-between with no gap, so as the window narrows the logo
+   block, the links and the buttons collide before the 900px breakpoint fires.
+   A floor on the gap keeps the three groups apart, and the links tighten
+   slightly in the squeezed band rather than touching the lockup. */
+.nav .wrap{gap:1.5rem}
+.nav .logo{flex:none}
+.nav .links{flex:0 1 auto}
+.nav .nav-actions{flex:none}
+@media(max-width:1120px){.nav .links{gap:1.35rem}.nav .wrap{gap:1.1rem}}
