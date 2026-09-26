@@ -12,7 +12,10 @@
 /* On small screens the nav collapses into the hamburger, but one call to
    action stays visible outside it - hiding the only cross-side entry point
    behind a menu is how a two-sided marketplace loses half its audience. */
-.nav-actions{display:flex;gap:.5rem}
+/* the nav wrap is space-between, so with .links hidden the CTA drifts to the
+   middle - push it right so it sits directly beside the hamburger */
+.nav-actions{display:flex;gap:.5rem;margin-left:auto}
+.nav .wrap .mobile-menu{margin-left:.55rem}
 .nav-actions .btn{display:none}
 .nav-actions .btn-keep{display:inline-flex;padding:.6rem .8rem;font-size:.76rem;background:var(--green2);border-color:var(--green2);color:#fff}
 .nav-actions .btn-keep:hover{background:#13794a;border-color:#13794a;color:#fff}.mobile-menu{display:block}.mobile-panel.open{display:flex;position:fixed;z-index:29;top:76px;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);padding:1rem 5vw;flex-direction:column;gap:1rem}.mobile-panel a{text-decoration:none;font-weight:750}.hero-grid,.story{grid-template-columns:1fr}.product{margin-top:2rem}.cards,.blog-grid{grid-template-columns:1fr 1fr}.categories{grid-template-columns:1fr 1fr}.section-head{display:block}.section-head p{margin-top:1rem}.footer-grid{grid-template-columns:1fr 1fr}.cta-box{display:block}.cta-box .btn{margin-top:1.5rem}}
